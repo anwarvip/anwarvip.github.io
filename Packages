@@ -6,7 +6,7 @@ Maintainer: Julio
 Depends: mobilesubstrate
 Filename: ./debfiles/com.julioverne.albumhider_0.0~beta1_iphoneos-arm.deb
 Size: 17728
-MD5sum: 41ad9ed5df76a02da531eb1b12cc86ea
+MD5sum: f80434fe6dbefdad7bfb1d37559a3ec837f91e57
 Description: Hide Album's On Photo App
 Name: AlbumHider
 Author: julioverne
