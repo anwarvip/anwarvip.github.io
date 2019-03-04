@@ -11,7 +11,7 @@ Homepage: http://twitter.com/ijulioverne
 Description: ADs Blocker for Apps.. Note: may not load page or app crash.
 Name: ADs Blocker
 Author: julioverne
-Depiction: http://anwarvipanwarvip.github.io/description.html?id=com.julioverne.adblock
+Depiction: http://anwarvip.github.io/description.html?id=com.julioverne.adblock
 
 Package: com.julioverne.albumhider
 Architecture: iphoneos-arm
@@ -25,7 +25,7 @@ MD5sum: 41ad9ed5df76a02da531eb1b12cc86ea
 Description: Hide Album's On Photo App
 Name: AlbumHider
 Author: julioverne
-Depiction: http://anwarvipanwarvip.github.io/description.html?id=com.julioverne.albumhider
+Depiction: http://anwarvip.github.io/description.html?id=com.julioverne.albumhider
 
 Package: com.julioverne.appellancy11
 Architecture: iphoneos-arm
