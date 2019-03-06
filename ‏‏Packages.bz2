@@ -1,0 +1,33 @@
+Package: com.julioverne.albumhider
+Architecture: iphoneos-arm
+Version: 0.0~beta1
+Section: Tweaks
+Maintainer: Julio
+Depends: mobilesubstrate
+Filename: ./debfiles/com.julioverne.albumhider_0.0~beta1_iphoneos-arm.deb
+Size: 17728
+MD5sum: 41ad9ed5df76a02da531eb1b12cc86ea
+Description: Hide Album's On Photo App
+Name: AlbumHider
+Author: julioverne
+Depiction: http://anwarvip.github.io/description.html?id=com.julioverne.albumhider
+
+Package: com.julioverne.appellancy11
+Architecture: iphoneos-arm
+Version: 1.1-20b
+Priority: optional
+Section: Tweaks
+Maintainer: Julio
+Depends: firmware (>= 6.0), mobilesubstrate (>= 0.9.5000), preferenceloader (>= 2.2.2)
+Conflicts: com.myrepospace.mlnlover11.appellancy, com.efrederickson.appellancy, org.thebigboss.appellancy
+Replaces: com.myrepospace.mlnlover11.appellancy, com.efrederickson.appellancy
+Filename: ./debfiles/com.julioverne.appellancy11_1.1-20b_iphoneos-arm.deb
+Size: 3709562
+MD5sum: 6ec175b926a05394b391c810408bf3cb
+Description: Control your phone with your face!
+Name: Appellancy (iOS 11)
+Author: Elijah Frederickson, julioverne
+dev: elijahfrederickson
+Icon: file:///Library/PreferenceBundles/AppellancySettings.bundle/AppellancySettings@2x.png
+Depiction: http://anwarvip.github.io/description.html?id=com.julioverne.appellancy11
+
