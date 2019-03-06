@@ -11,6 +11,7 @@ Description: Hide Album's On Photo App
 Name: AlbumHider
 Author: julioverne
 Depiction: http://anwarvip.github.io/description.html?id=com.julioverne.albumhider
+screenshot: https://i.imgur.com/wg6WEq2.png
 
 Package: com.julioverne.appellancy11
 Architecture: iphoneos-arm
@@ -30,6 +31,6 @@ Author: Elijah Frederickson, julioverne
 dev: elijahfrederickson
 Icon: file:///Library/PreferenceBundles/AppellancySettings.bundle/AppellancySettings@2x.png
 Depiction: http://anwarvip.github.io/description.html?id=com.julioverne.appellancy11
-screenshot: https://i.imgur.com/wg6WEq2.png
+
 	
 
