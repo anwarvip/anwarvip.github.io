@@ -34,6 +34,7 @@ Depiction: http://anwarvip.github.io/description.html?id=com.ryleyangus.libertyl
 Name: Smootheaders11
 Package: com.cydiageek.smootheaders11
 Priority: optional
+Filename: ./debfiles/com.cydiageek.smootheaders11_1.0.9_iphoneos-arm.deb
 size: 55832 
 Depends: mobilesubstrate, firmware (>= 11.0), preferenceloader, org.thebigboss.libcolorpicker
 Version: 1.0.9
@@ -48,4 +49,6 @@ Tag: purpose::extension, compatible::ios11, compatible::ios12
 Installed-Size: 553
 dev: lucaluca86
 Icon: file:///Library/PreferenceBundles/Smootheaders11.bundle/Smootheaders11@2x.png
+Depiction: http://anwarvip.github.io/description.html?id=com.cydiageek.smootheaders11
+
 
