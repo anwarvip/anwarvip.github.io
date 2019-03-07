@@ -21,13 +21,34 @@ Maintainer: Ryley Angus
 Depends: mobilesubstrate, preferenceloader, applist
 Conflicts: com.ryleyangus.liberty, com.ryleyangus.libertylite
 Filename: ./debfiles/com.ryleyangus.libertylite.beta_0.2.11_iphoneos-arm.deb
-Size: 37516
+Size: 37517
 installed-size: 316
-MD5sum: e4fe04fff5bb0aa820f0e4e9d92417de
+MD5sum: e4fe04fff5bb0aa820f0e4e9d92418de
 Description: اخفاء وجود الجلبريك للتطبيقات
 Name: Liberty Lite (beta)
 Homepage: https://anwarvip.github.io/
 Author: Ryley Angus
 Icon: file:///Library/PreferenceBundles/LibertyPref.bundle/LibertyPref.png
 Depiction: http://anwarvip.github.io/description.html?id=com.ryleyangus.libertylite.beta
+
+Name: Smootheaders11
+Package: com.cydiageek.smootheaders11
+Priority: optional
+Filename: ./debfiles/com.cydiageek.smootheaders11_1.0.9_iphoneos-arm.deb
+size: 55832 
+Depends: mobilesubstrate, firmware (>= 11.0), preferenceloader, org.thebigboss.libcolorpicker
+Version: 1.0.9
+Architecture: iphoneos-arm
+Description: مميزات عدة مثل تصغير حجم بانر الإشعار في الشاشة الرئيسية وشاشة القفل ومركز الإشعارات، إخفاء محتوى الإشعار، إخفاء أيقونة التطبيق، والكثير. iOS 11/12!
+Depiction: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=smootheaders11Dp
+Sponsor: thebigboss.org <http://thebigboss.org>
+Maintainer: BigBoss <bigboss@thebigboss.org>
+Author: CydiaGeek <lucaluca86@aol.com>
+Section: Tweaks
+Tag: purpose::extension, compatible::ios11, compatible::ios12
+Installed-Size: 553
+dev: lucaluca86
+Icon: file:///Library/PreferenceBundles/Smootheaders11.bundle/Smootheaders11@2x.png
+Depiction: http://anwarvip.github.io/description.html?id=com.cydiageek.smootheaders11
+
 
