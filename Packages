@@ -21,9 +21,9 @@ Maintainer: Ryley Angus
 Depends: mobilesubstrate, preferenceloader, applist
 Conflicts: com.ryleyangus.liberty, com.ryleyangus.libertylite
 Filename: ./debfiles/com.ryleyangus.libertylite.beta_0.2.11_iphoneos-arm.deb
-Size: 37516
+Size: 37517
 installed-size: 316
-MD5sum: e4fe04fff5bb0aa820f0e4e9d92417de
+MD5sum: e4fe04fff5bb0aa820f0e4e9d92418de
 Description: اخفاء وجود الجلبريك للتطبيقات
 Name: Liberty Lite (beta)
 Homepage: https://anwarvip.github.io/
