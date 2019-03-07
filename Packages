@@ -13,7 +13,7 @@ Homepage: https://anwarvip.github.io/
 Author: julioverne
 Depiction: http://anwarvip.github.io/description.html?id=com.julioverne.albumhider
 
-Package: com.ryleyangus.libertylite.beta
+Package: com.ryleyangus.libertylite
 Architecture: iphoneos-arm
 Version: 0.2.11
 Section: Tweaks
