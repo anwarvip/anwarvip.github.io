@@ -9,6 +9,7 @@ Size: 17728
 MD5sum: 41ad9ed5df76a02da531eb1b12cc86ea
 Description: Hide Album's On Photo App
 Name: AlbumHider
+Homepage: https://anwarvip.github.io/
 Author: julioverne
 Depiction: http://anwarvip.github.io/description.html?id=com.julioverne.albumhider
 
@@ -24,9 +25,8 @@ installed-size: 316
 MD5sum: e4fe04fff5bb0aa820f0e4e9d92417de 
 Description: اخفاء وجود الجلبريك للتطبيقات
 Name: Liberty Lite (beta)
-Homepage: https://anwarvip.github.io/3arab/
+Homepage: https://anwarvip.github.io/
 Author: Ryley Angus
 Icon: file:///Library/PreferenceBundles/libertyPref.bundle/libertyPref.png
 Depiction: http://anwarvip.github.io/description.html?id=com.ryleyangus.libertylite.beta
-
 
