@@ -2,7 +2,7 @@
 	"name": "liberty lite (beta)",
 	"desc_short": "اخفاء وجود الجلبريك للتطبيقات",
 	"desc_long": "اخفاء وجود الجلبريك للتطبيقات",
-	"compatitle": "iOS 11", "iOS 12",
+	"compatitle": "iOS 11","iOS 12",
 	"changelog": "<strong>0.0~beta</strong><br>+ Initial Release.<br>",
 	"open": true,
 }
