@@ -41,6 +41,7 @@ Version: 1.0.9
 Architecture: iphoneos-arm
 Description: مميزات عدة مثل تصغير حجم بانر الإشعار في الشاشة الرئيسية وشاشة القفل ومركز الإشعارات، إخفاء محتوى الإشعار، إخفاء أيقونة التطبيق، والكثير. iOS 11/12!
 Depiction: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=smootheaders11Dp
+MD5sum: d5ee3100b8af9597d429d4be757b18fd
 Sponsor: thebigboss.org <http://thebigboss.org>
 Maintainer: BigBoss <bigboss@thebigboss.org>
 Author: CydiaGeek <lucaluca86@aol.com>
