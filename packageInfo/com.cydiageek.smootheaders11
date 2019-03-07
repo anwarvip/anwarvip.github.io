@@ -1,21 +1,10 @@
 <<<<<<< HEAD
 {
-	"name": "AlbumHider",
-	"desc_short": "Hide Album's On Photo App",
-	"desc_long": "On Album Section Tap Edit and Tap on Bookmark Icon and Hide/Show Any Album's.<br>إخفاء الألبومات بتطبيق الصور<br>No Options To Configure.",
-	"compatitle": "iOS 11",
-	"changelog": "<strong>0.0~beta1</strong><br>+ Initial Release.<br>",
-	"screenshot": "<div style='text-align:center;'><a href='https://i.imgur.com/wg6WEq2.png' target='_blank'><img width=95% src='https://i.imgur.com/wg6WEq2.png'/></a><br></div>",
+	"name": "Smootheaders11",
+	"desc_short": "تصغير حجم بانر الإشعار",
+	"desc_long": " مميزات عدة مثل تصغير حجم بانر الإشعار في الشاشة الرئيسية وشاشة القفل ومركز الإشعارات.<br>إخفاء محتوى الإشعار،<br> إخفاء أيقونة التطبيق، والكثير. iOS 11/12!.",
+	"compatitle": "iOS 11, 12",
+	"changelog": "<strong>01.0.9~beta</strong><br>+ Initial Release.<br>",
+	"screenshot": null,
 	"open": true,
 }
-=======
-{
-	"name": "AlbumHider",
-	"desc_short": "Hide Album's On Photo App",
-	"desc_long": "On Album Section Tap Edit and Tap on Bookmark Icon and Hide/Show Any Album's.<br>إخفاء الألبومات بتطبيق الصور<br>No Options To Configure.",
-	"compatitle": "iOS 11",
-	"changelog": "<strong>0.0~beta1</strong><br>+ Initial Release.<br>",
-	"screenshot": "<div style='text-align:center;'><a href='https://i.imgur.com/wg6WEq2.png' target='_blank'><img width=95% src='https://i.imgur.com/wg6WEq2.png'/></a><br></div>",
-	"open": true,
-}
->>>>>>> 07ab7cfe419afc240664a3258fce4c381a1041fa
