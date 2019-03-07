@@ -32,7 +32,7 @@ Icon: file:///Library/PreferenceBundles/LibertyPref.bundle/LibertyPref.png
 Depiction: http://anwarvip.github.io/description.html?id=com.ryleyangus.libertylite.beta
 
 Name: Smootheaders11
-Package: com.cydiageek.smootheaders11
+Package: com.cydiageek.smootheaders12
 Priority: optional
 Filename: ./debfiles/com.cydiageek.smootheaders11_1.0.9_iphoneos-arm.deb
 size: 55832 
