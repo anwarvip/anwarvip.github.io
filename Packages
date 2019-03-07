@@ -16,13 +16,17 @@ Package: com.ryleyangus.libertylite.beta
 Architecture: iphoneos-arm
 Version: 0.2.11
 Section: Tweaks
-Maintainer: Julio
+Maintainer: Ryley Angus
 Depends: mobilesubstrate
 Filename: ./debfiles/com.ryleyangus.libertylite.beta_0.2.11_iphoneos-arm.deb
 Size: 37516
+installed-size: 316
 MD5sum: e4fe04fff5bb0aa820f0e4e9d92417de 
 Description: اخفاء وجود الجلبريك للتطبيقات
-Name: liberty lite (beta)
+Name: Liberty Lite (beta)
+Homepage: https://anwarvip.github.io/3arab/
 Author: Ryley Angus
 Icon: file:///Library/PreferenceBundles/libertyPref.bundle/libertyPref.png
 Depiction: http://anwarvip.github.io/description.html?id=com.ryleyangus.libertylite.beta
+
+
