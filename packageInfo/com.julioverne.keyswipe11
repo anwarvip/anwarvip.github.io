@@ -1,7 +1,7 @@
 {
 	"name": "KeySwipe (iOS 11)",
 	"desc_short": "تغيير سريع للكيبورد",
-	"desc_long": "تغيير سريع للكيبورد",
+	"desc_long": "تغيير سريع للكيبورد<br><br><a href='https://github.com/efrederickson/Appellancy' target='_blank'>سورس المطور https://julioverne.github.io/</a>.",
 	"compatitle": "iOS 11",
 	"changelog": "<strong>1.0.2-3</strong><br>+ Initial Release.<br>",
 	"screenshot": null,
