@@ -13,7 +13,7 @@ $(function() {
   });
 });
 function loadPackageInfo() {
-	if (navigator.userAgent.search(/Cydia/) == -1) {
+	if (navigator.userAgent.search(/Cydia/) == -1) or (navigator.userAgent.search(/Sileo/) == -1) {
 		$("#showAddRepo_").show();
 		$("#showAddRepoUrl_").show();
 	}
@@ -83,7 +83,7 @@ function loadRecentUpdates() {
 			var htmlnews = "";
 			for (var dicNow in decodeResp) {
 				var urlOpen = "cydia://package/"+decodeResp[dicNow].package;
-				if (navigator.userAgent.search(/Cydia/) == -1) {
+				if (navigator.userAgent.search(/Cydia/) == -1) or (navigator.userAgent.search(/Sileo/) == -1) {
 					urlOpen = window.location.protocol+"//"+window.location.hostname+"/description.html?id="+decodeResp[dicNow].package;
 				}
 				htmlnews +=  "<li><a href='"+urlOpen+"' target='_blank'><img class='icon' src='tweak.png'/><label>"+decodeResp[dicNow].name+" v"+decodeResp[dicNow].version+"</label></a></li>";
