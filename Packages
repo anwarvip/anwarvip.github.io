@@ -1,17 +1,56 @@
-Package: com.julioverne.adblock
-Architecture: iphoneos-arm
-Version: 0.2~beta1
-Section: Tweaks
+Author: Delewhopper, julioverne
 Maintainer: Julio
-Depends: mobilesubstrate
-Filename: ./debfiles/com.julioverne.adblock_0.2~beta1_iphoneos-arm.deb
-Size: 10028
-MD5sum: 0b04b74bb57a4aef287dfa423462a1a5
-Homepage: http://twitter.com/ijulioverne
-Description: ADs Blocker for Apps.. Note: may not load page or app crash.
-Name: ADs Blocker
-Author: julioverne
-Depiction: http://julioverne.github.io/description.html?id=com.julioverne.adblock
+Name: KeySwipe (iOS 11 - 12)
+Package: com.julioverne.keyswipe11
+MD5sum: 43dc1c10c4d289c21b0759b69c4aa892
+Depends: firmware (>= 7.0), mobilesubstrate (>= 0.9.5000), preferenceloader
+Filename: ./filedab/com.julioverne.keyswipe11_1.0.2-3a_iphoneos-arm.deb
+Conflicts: org.thebigboss.keyswipe
+Section: Tweaks
+Version: 1.0.2-3a
+Architecture: iphoneos-arm
+Description: تغيير سريع للكيبورد
+dev: delewhopper
+Icon: file:///Library/PreferenceBundles/keyswipeprefs.bundle/keyswipeicon.png
+Depiction: http://anwarvip.github.io/description.html?id=com.julioverne.keyswipe11
+
+Package: com.ryleyangus.libertylite.beta
+Architecture: iphoneos-arm
+Version: 0.2.11
+Section: Tweaks
+Maintainer: Ryley Angus
+Depends: mobilesubstrate, preferenceloader, applist
+Conflicts: com.ryleyangus.liberty, com.ryleyangus.libertylite
+Filename: ./filedab/com.ryleyangus.libertylite.beta_0.2.11_iphoneos-arm.deb
+Size: 37516
+installed-size: 316
+MD5sum: e4fe04fff5bb0aa820f0e4e9d92417de
+Description: اخفاء وجود الجلبريك للتطبيقات
+Name: Liberty Lite (beta)
+Homepage: https://anwarvip.github.io/
+Author: Ryley Angus
+Icon: file:///Library/PreferenceBundles/LibertyPref.bundle/LibertyPref.png
+Depiction: http://anwarvip.github.io/description.html?id=com.ryleyangus.libertylite.beta
+
+Name: Smootheaders11
+Package: com.cydiageek.smootheaders11
+Priority: optional
+Filename: ./filedab/com.cydiageek.smootheaders11_1.0.9_iphoneos-arm.deb
+size: 55832 
+Depends: mobilesubstrate, firmware (>= 11.0), preferenceloader, org.thebigboss.libcolorpicker
+Version: 1.0.9
+Architecture: iphoneos-arm
+Description: مميزات عدة مثل تصغير حجم بانر الإشعار في الشاشة الرئيسية وشاشة القفل ومركز الإشعارات، إخفاء محتوى الإشعار، إخفاء أيقونة التطبيق، والكثير. iOS 11/12!
+Depiction: http://anwarvip.github.io/description.html?id=com.cydiageek.smootheaders11
+MD5sum: d5ee3100b8af9597d429d4be757b18fd
+Sponsor: http://anwarvip.github.io/3arab/
+Maintainer: BigBoss <bigboss@thebigboss.org>
+Author: CydiaGeek <lucaluca86@aol.com>
+Section: Tweaks
+Tag: purpose::extension, compatible::ios11, compatible::ios12
+Installed-Size: 553
+dev: lucaluca86
+Icon: file:///Library/PreferenceBundles/Smootheaders11.bundle/Smootheaders11@2x.png
 
 Package: com.julioverne.albumhider
 Architecture: iphoneos-arm
@@ -19,10 +58,58 @@ Version: 0.0~beta1
 Section: Tweaks
 Maintainer: Julio
 Depends: mobilesubstrate
-Filename: ./debfiles/com.julioverne.albumhider_0.0~beta1_iphoneos-arm.deb
+Filename: ./filedab/com.julioverne.albumhider_0.0~beta1_iphoneos-arm.deb
 Size: 17728
 MD5sum: 41ad9ed5df76a02da531eb1b12cc86ea
-Description: Hide Album's On Photo App
+Description: إخفاء الألبومات بتطبيق الصور
 Name: AlbumHider
+Homepage: https://anwarvip.github.io/
 Author: julioverne
-Depiction: http://julioverne.github.io/description.html?id=com.julioverne.albumhider
+Depiction: http://anwarvip.github.io/description.html?id=com.julioverne.albumhider
+
+Name: Dangerous
+Package: com.shiarahmed.dangerous
+Priority: optional
+Depends: firmware (>= 7.0)
+Version: 1.2
+Size: 1047522
+Architecture: iphoneos-arm
+MD5sum: f6d014f3bdb0acc1d2216841f154cdfc
+Filename: ./filedab/com.shiarahmed.dangerous_1.2_iphoneos-arm.deb
+Description: ثيم ايقونات جميل جدا
+Depiction: http://anwarvip.github.io/description.html?id=com.shiarahmed.dangerous
+Maintainer: Shiar
+Author: Shiar Ahmed <shiyar2002@icloud.com>
+Section: Themes
+dev: Shiar
+
+Package: tk.oceantweak.ocean
+Name: Ocean
+Depends: mobilesubstrate, preferenceloader, com.creaturecoding.libcspreferences, com.creaturesurvive.libcscolorpicker
+Architecture: iphoneos-arm
+Size: 284446
+MD5sum: e935b5ea674ffacb6c5afe73cea9101a
+Filename: ./filedab/tk.oceantweak.ocean_0.1.3_iphoneos-arm.deb
+Description: اضافية لمتجر Sileo
+Maintainer: webmaster@localhost.com
+Author: TeamOcean
+Section: Tweaks
+Depiction: http://anwarvip.github.io/description.html?id=tk.oceantweak.ocean
+Icon: file:///Library/PreferenceBundles/oceanprefs.bundle/icon-large.png
+Version: 0.1.3
+Installed-Size: 582
+
+Package: com.anwarvip.Light
+Name: Light 12
+Section: Themes
+Version: 2.0
+Author: anwar
+Maintainer: anwar
+Description: An OLED friendly iOS theme 11-12.
+Architecture: iphoneos-arm
+Depends: mobilesubstrate, preferenceloader, com.spark.snowboard
+MD5sum: e66799c9eeba180d697554192af818ac
+Filename: ./filedab/com.anwarvip.Light_2.0_ iphoneos-arm.deb
+Size: 1297336
+ 
+ 
