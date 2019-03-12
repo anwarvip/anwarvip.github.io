@@ -1,9 +1,0 @@
-{
-	"name": "Smootheaders11",
-	"desc_short": "تصغير حجم بانر الإشعار",
-	"desc_long": " مميزات عدة مثل تصغير حجم بانر الإشعار في الشاشة الرئيسية وشاشة القفل ومركز الإشعارات.<br>إخفاء محتوى الإشعار،<br> إخفاء أيقونة التطبيق، والكثير. iOS 11/12!.<br><br><a href='http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=smootheaders11Dp' target='_blank'>سورس المطور BigBoss</a>.",
-	"compatitle": "iOS 11, 12",
-	"changelog": "<strong>01.0.9~beta</strong><br>+ Initial Release.<br>",
-	"screenshot": null,
-	"open": true,
-}

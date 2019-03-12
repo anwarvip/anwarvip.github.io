@@ -1,9 +1,0 @@
-{
-	"name": "KeySwipe (iOS 11 - 12)",
-	"desc_short": "تغيير سريع للكيبورد",
-	"desc_long": "الاداة تسهل عليك عميل تنقل بين اللغات والايموجي بالرفع لفوق او السحب للاسفل<br><br><a href='https://julioverne.github.io/' target='_blank'>سورس المطور https://julioverne.github.io/</a>.",
-	"compatitle": "iOS 11, 12",
-	"changelog": "<strong>1.0.2-3</strong><br>+ Initial Release.<br>",
-	"screenshot": null,
-	"open": true,
-}

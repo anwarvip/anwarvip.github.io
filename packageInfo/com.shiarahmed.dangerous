@@ -1,9 +1,0 @@
-{
-	"name": "AlbumHider",
-	"desc_short": "ثيم ايقونات جميل جدا",
-	"desc_long": "ثيم ايقونات جميل جدا.<br><br><a href='https://shiarahmed.github.io/' target='_blank'>سورس المطور https://shiarahmed.github.io/</a>",
-	"compatitle": "iOS 11, 12",
-	"changelog": "<strong>1.2</strong><br>+ Initial Release.<br>",
-	"screenshot": "<div style='text-align:center;'><a href='https://i.imgur.com/boOUSIS.jpg' target='_blank'><img width=95% src='https://i.imgur.com/boOUSIS.jpg'/></a><br></div>",
-	"open": true,
-}
