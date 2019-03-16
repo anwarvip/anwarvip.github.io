@@ -7,11 +7,23 @@
 </head>
 <script type="text/javascript"  src="jquery-3.2.1.min.js"></script>
 <script type="text/javascript"  src="description.js?_=46545663394"></script>
-<script type="text/javascript" src="jquery.querystring.js"></script>
-<script type="text/javascript" src="data-loader-engine.js"></script>
-<script type="text/javascript" src="ios_version_check.js"></script>	
+
 	
-<script type="text/javascript">
+	
+	
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="rstyle.css"/>
+	<script type="text/javascript" src="http://gc.kis.v2.scr.kaspersky-labs.com/B4FBEEF3-32BF-7146-8723-2F33B08A9E12/main.js" charset="UTF-8"></script><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.querystring.js"></script>
+	<script type="text/javascript" src="js/data-loader-engine.js"></script>
+	<script type="text/javascript" src="js/ios_version_check.js"></script>
+	<script type="text/javascript">
 	bundleid = $.QueryString['p'];
 
 	var contentBlocks = {
@@ -201,9 +213,9 @@
 			}
 		}); //ajax
 	}); // ready
- </script>
+  </script>
 </head>
-
+<body style="display:none">
 <div id="packageInformation">
 	<div id="packageHeader" class="container" style="display:none">
 		<div id="jumbotron" class="container">
@@ -220,6 +232,110 @@
 		<ul id="infoList" class="list-group">
 		</ul>
 	</div>
+
+	<div class="container" id="descriptionListContainer">
+		<h5>DESCRIPTION</h5>
+		<ul id="descriptionList" class="list-group">
+			<li id="screenshotsLink" />
+		</ul>
+	</div>
+
+	<div class="container" id="infoContainer2">
+		<h5>INFO</h5>
+		<ul id="infoList2" class="list-group">
+		</ul>
+	</div>
+
+	<div class="container" id="knownIssuesContainer">
+		<h5 id="knownIssuesTitle">KNOWN ISSUES</h5>
+		<ul id="knownIssuesList" class="list-group">
+		</ul>
+	</div>
+
+	<div class="container" id="changeLogContainer">
+		<h5>LATEST CHANGES <span id="versionBadge" class="label label-default" /></h5>
+		<ul id="changesList" class="list-group">
+			<li id="changelogLink" class="list-group-item"></li>
+		</ul>
+	</div>
+
+	<div class="container" id="dependenciesContainer">
+		<h5>DEPENDENCIES</h5>
+		<ul id="dependencyList" class="list-group">
+		</ul>
+	</div>
+
+	<div class="container" id="externalLinksContainer" style="display:none">
+		<h5>LINKS</h5>
+		<ul id="externalLinksList" class="list-group">
+		</ul>
+	</div>
+
+</div>
+<div id="packageError" style="display:none">
+	<div class="container">
+	  <div class="alert alert-danger">
+		<strong>ERROR:</strong> Cannot find the package you are tying to view!
+	  </div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	function setAnchorTargets() {
+		// if on Cydia, set link targets to _blank
+		if (navigator.userAgent.search(/Cydia/) != -1) {
+			$('a').attr('target', '_blank');
+		}
+	}
+
+	var repoContents = 	{
+		"#externalLinksList" :
+			{"type":"custom"
+				,"source":"repo>footerlinks>link"
+				,"render":function(element,source) {
+					if ($(source).size() > 0){
+						$('#externalLinksContainer').show();
+					}
+					$.each(source, function(index,data) {
+						if (navigator.userAgent.search(/Cydia/) != -1) {
+							if ($(data).find('name').text() == 'Add Repo to Cydia') {
+								return;
+							}
+						}
+
+						var p = $("<li class='list-group-item'>");
+						var a = $("<a class='btn btn-primary btn-block'>");
+						a.attr("href",$(data).find('url').text());
+						if ($(data).find('iconclass')) {
+							var i =  $("<span>")
+							i.attr("class",$(data).find('iconclass').text());
+							console.log(i);
+							$(a).append(i);
+						}
+						$(a).append(' '+$(data).find('name').text());
+						$(p).append(a)
+						$(element).append(p);
+					}); //each
+				} //render
+			}
+	}
+
+	$(document).ready(function() {
+		$.ajax({type: "GET", dataType: "xml",url : ("../repo.xml"),cache: false,
+			success : function(xml){
+				data_loader_engine(repoContents,xml);
+				setAnchorTargets();
+			},
+			error: function() {
+				setAnchorTargets();
+			}
+		}); //ajax
+	}); // ready
+</script>
+</body>
+</html>
+	
+	
 
 	
 	
