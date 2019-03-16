@@ -1,0 +1,96 @@
+html {
+	background:#efeff4!important;margin:0;padding:0;border:0;outline:0;box-sizing:border-box;
+}
+
+body {
+	background:#efeff4!important;margin:0;padding:0;border:0;outline:0;box-sizing:border-box;
+	font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+	width: 100%;
+}
+
+.jumbotron-bg {
+	background: green
+}
+
+#jumbotron.container {
+	background-color: #eee;
+	color: inherit;
+	text-align: center;
+	margin-bottom: 5px;
+	padding-bottom: 5px;
+	padding-top: 5px;
+}
+
+#jumbotron.container .h1, #jumbotron.container div {
+	font-size: 30px;
+}
+
+.container {
+	padding-right: 0px;
+	padding-left: 0px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.nopadding {
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+img.leftpad  {
+	padding-right: 0px;
+}
+
+img.centertpad  {
+	padding-right: 4px;
+	padding-left: 4px;
+}
+
+img.rightpad  {
+	padding-left: 0px;
+}
+
+img.dualleftpad  {
+	padding-right: 4px;
+}
+
+img.dualrightpad  {
+	padding-left: 4px;
+}
+
+h5 {
+	padding-right: 5px;
+	padding-left: 5px;
+	margin-right: auto;
+}
+
+ul {
+	padding: 0 0px;
+}
+ul  ul {
+	padding: 0 16px;
+}
+ul li{
+	padding-left: 0px;
+}
+
+a {
+	color: inherit;
+}
+
+.btn-primary {
+	color: #000;
+	background-color: #d5e5f2;
+	border-color: #d5e5f2;
+}
+ 
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+	background-color: #86a4bf;
+	border-color: #d5e5f2;
+}
+
+.label-yellow {
+	background-color:#fbffbf;
+	color:#000;
+}
+
