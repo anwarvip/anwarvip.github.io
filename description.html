@@ -201,7 +201,26 @@
 			}
 		}); //ajax
 	}); // ready
-  </script>
+ </script>
+</head>
+<body style="display:none">
+<div id="packageInformation">
+	<div id="packageHeader" class="container" style="display:none">
+		<div id="jumbotron" class="container">
+			<div id="packageName"></div>
+		</div>
+	</div>
+
+	<div class="container">
+	  <div id="compatibilityCheck" class="alert"></div>
+	</div>
+
+	<div class="container" id="infoContainer">
+		<h5>INFO</h5>
+		<ul id="infoList" class="list-group">
+		</ul>
+	</div>
+
 	
 	
 <body onload="loadPackageInfo();loadRecentUpdates();">
