@@ -202,61 +202,70 @@
 	}); // ready
   </script>
 </head>
-<body style="">
+<body style="display:none">
 <div id="packageInformation">
-	<div id="packageHeader" class="container" style="">
+	<div id="packageHeader" class="container" style="display:none">
 		<div id="jumbotron" class="container">
-			<div id="packageName">NextAlarm12</div>
+			<div id="packageName"></div>
 		</div>
 	</div>
 
 	<div class="container">
-	  <div id="compatibilityCheck" class="alert" style="display: none;"></div>
+	  <div id="compatibilityCheck" class="alert"></div>
 	</div>
 
-	
+	<div class="container" id="infoContainer">
+		<h5>INFO</h5>
+		<ul id="infoList" class="list-group">
+		</ul>
+	</div>
 
 	<div class="container" id="descriptionListContainer">
 		<h5>DESCRIPTION</h5>
 		<ul id="descriptionList" class="list-group">
-			<li class="list-group-item">
-			<ul>
-				<li>Show the next alarm time and/or time until the next alarm in the status bar, under the LockScreen clock and/or as a badge on the clock icon.</li>
-				<li>Show the time until each alarm in the Clock App.</li>
-			</ul>
-		</li><li class="list-group-item"><a class="btn btn-primary btn-block" href="./screenshots.php?p=nextalarm12">Screenshots</a></li></ul>
+			<li id="screenshotsLink" />
+		</ul>
 	</div>
 
-	
+	<div class="container" id="infoContainer2">
+		<h5>INFO</h5>
+		<ul id="infoList2" class="list-group">
+		</ul>
+	</div>
 
-	
+	<div class="container" id="knownIssuesContainer">
+		<h5 id="knownIssuesTitle">KNOWN ISSUES</h5>
+		<ul id="knownIssuesList" class="list-group">
+		</ul>
+	</div>
 
 	<div class="container" id="changeLogContainer">
-		<h5>LATEST CHANGES <span id="versionBadge" class="label label-default">NextAlarm12 1.0.0~beta3 - 2019/03/13</span></h5>
+		<h5>LATEST CHANGES <span id="versionBadge" class="label label-default" /></h5>
 		<ul id="changesList" class="list-group">
-			<div class="list-group-item">
-				<ul>
-					<li>Initial release for iOS 12.</li>
-				</ul>
-			
-			</div><li id="changelogLink" class="list-group-item"><a class="btn btn-primary btn-block" href="./changelog.php?p=nextalarm12">Full Changelog</a></li>
+			<li id="changelogLink" class="list-group-item"></li>
 		</ul>
 	</div>
 
 	<div class="container" id="dependenciesContainer">
 		<h5>DEPENDENCIES</h5>
 		<ul id="dependencyList" class="list-group">
-		<li class="list-group-item">iOS &gt;= 12, Cydia Substrate, PreferenceLoader</li></ul>
+		</ul>
 	</div>
 
-	<div class="container" id="externalLinksContainer" style="">
+	<div class="container" id="externalLinksContainer" style="display:none">
 		<h5>LINKS</h5>
-		<ul id="externalLinksList" class="list-group"><li class="list-group-item"><a class="btn btn-primary btn-block" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=3PNRFVWBYX3E4"><span class="glyphicon glyphicon-usd"></span> Donate</a></li>
-		<li class="list-group-item"><a class="btn btn-primary btn-block" href="more.htm"><span class="glyphicon glyphicon-th-list"></span> More by this Developer</a></li><li class="list-group-item"><a class="btn btn-primary btn-block" href="cydia://url/https://cydia.saurik.com/api/share#?source=http://www.tateu.net/repo/"><span class="glyphicon glyphicon-plus"></span> Add Repo to Cydia</a></li></ul>
+		<ul id="externalLinksList" class="list-group">
+		</ul>
 	</div>
 
 </div>
-
+<div id="packageError" style="display:none">
+	<div class="container">
+	  <div class="alert alert-danger">
+		<strong>ERROR:</strong> Cannot find the package you are tying to view!
+	  </div>
+	</div>
+</div>
 
 <script type="text/javascript">
 	function setAnchorTargets() {
