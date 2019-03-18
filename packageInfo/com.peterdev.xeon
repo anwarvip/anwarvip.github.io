@@ -1,6 +1,6 @@
 {
 	"name": "xeon",
-	"desc_short": "اضافية لمتجر Sileo",
+	"desc_short": "تخصيص اسم الشبكة",
 	"desc_long": "تخصيص اسم الشبكة في iPhone X عبر تعيين رمز من تلك المضمنة مع الأداة، أو تخصيص نص معين.<br>(تعتبر هي أداة Zeppelin ولكن للأجهزة الحديثة)<br><a href='https://nexusrepo.kro.kr/' target='_blank'>سورس المطور</a>",
 	"compatitle": "iOS 11, 12",
 	"changelog": "<strong>1.0</strong><br>+ Initial Release.<br>",
