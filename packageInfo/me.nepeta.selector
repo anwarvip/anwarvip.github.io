@@ -1,0 +1,9 @@
+{
+       "name": "Selector",
+        "desc_short": "إضافة خيارات (ترجمة وبحث)",
+        "desc_long": "إضافة خيارات (ترجمة وبحث) إلى قائمة خيارات التحديد بحيث يمكنك ترجمة الكلمات أو البحث عنها بواسطة قوقل بشكل سريع وجميل وأنيق جداً.<br>(يمكن تحديد خدمة غير قوقل)<br><a href='https://repo.nepeta.me/' target='_blank'>سورس المطور</a><br>",
+        "compatitle": "iOS 11, 12",
+        "changelog": "<strong>0.1.1</strong><br>+ Initial Release.<br>",
+        "screenshot": "<div style='text-align:center;'><a href='https://i.imgur.com/NBBgaRs.jpg' target='_blank'><img width=95% src='https://i.imgur.com/NBBgaRs.jpg'/></a><br></div>",
+        "open": true,
+}
