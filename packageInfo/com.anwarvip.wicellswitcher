@@ -1,0 +1,9 @@
+{
+	"name": "WiCellSwitcher",
+	"desc_short": "null",
+	"desc_long": "إغلاق الـ Wi-Fi تلقائياً عند تشغيل البيانات الخلوية، وإغلاق البيانات الخلوية تلقائياً عند تشغيل الـ Wi-Fi مما يساعد في الحفاظ على البطارية.<br>",
+	"compatitle": "iOS 7, 12",
+	"changelog": "<strong>0.0.4</strong><br>+ Initial Release.<br>",
+	"screenshot": null,
+	"open": true,
+}
