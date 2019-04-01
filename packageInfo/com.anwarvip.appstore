@@ -1,7 +1,7 @@
 {
 	"name": "APPSTORE",
 	"desc_short": "حل مشكلة تعريب الابستور",
-	"desc_long": " بعد تحميلك الاداة قم بفتح الترمينل .<br>su - alpine - 3rab،<br>انتظر لحين اعادة تشغيل الجهاز.<br>",
+	"desc_long": " بعد تحميلك الاداة قم بفتح الترمينل .<br>su - alpine - 3rab<br>انتظر لحين اعادة تشغيل الجهاز.<br>",
   "compatitle": "iOS 12.1",
 	"changelog": "<strong>0.0.1</strong><br>+ Initial Release.<br>",
 	"screenshot": null,
