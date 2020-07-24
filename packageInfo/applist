@@ -1,0 +1,8 @@
+{
+	"name": "applist",
+	"desc_short": "",
+	"desc_long": "Allow extensions to read the list of installed apps",
+	"compatitle": "",
+	"changelog": "<strong>1.5.16</strong><br>+ Initial Release.<br>",
+	"open": true,
+}
