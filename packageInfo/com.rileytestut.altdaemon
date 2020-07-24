@@ -1,0 +1,9 @@
+{
+	"name": "AltDaemon",
+	"desc_short": "",
+	"desc_long": "AltDaemon allows AltStore to install and refresh apps without a computer.",
+	"compatitle": "iOS 12.2",
+	"changelog": "<strong>0.2</strong><br>+ Initial Release.<br>",
+	"screenshot": null,
+	"open": true,
+}
