@@ -1,182 +1,90 @@
 function iOSVersion() {
-	var match = (navigator.appVersion).split('OS ');
-	if (match.length > 1) {
-		return match[1].split(' ')[0].split('_').join('.');
-	}
-	return false;
+    var match = navigator.appVersion.split('OS ');
+    if (match.length > 1) {
+        return match[1].split(' ')[0].split('_').join('.');
+    }
+    return false;
 }
+
 $(function() {
-  $("li").on("click",function() {
-	  if(this.id=="dnt") {
-		  $("#dnt_txt").html("You can donate USD via PayPal mail: anwar.vip"+"@"+"gmail.com");
-	  }
-  });
+    $("li").on("click", function() {
+        if (this.id == "dnt") {
+            $("#dnt_txt").text("You can donate USD via PayPal mail: anwar.vip" + "@" + "gmail.com");
+        }
+    });
 });
-function loadPackageInfo() {
-	if (navigator.userAgent.search(/Cydia/) == -1) {
-		$("#showAddRepo_").show();
-		$("#showAddRepoUrl_").show();
-	}
-	var urlSelfParts = window.location.href.split('description.html?id=');
-	var form_url = urlSelfParts[0]+"packageInfo/"+urlSelfParts[1];
-	$.ajax({
-		url: form_url,
-		type: "GET",
-		cache: false,
-		crossDomain: true,
-		success: function (returnhtml) {
-			$("#tweakStatusInfo").hide();
-			var decodeResp = eval('('+returnhtml+')');
-			if(decodeResp.name) {
-				document.title = decodeResp.name;
-				$("#name").html(decodeResp.name);
-				$("#name").show();
-			}
-			if(decodeResp.desc_short) {
-				$("#desc_short").html(decodeResp.desc_short);
-				$("#desc_short_").show();
-			}
-			if(decodeResp.warning) {
-				$("#warning").html(decodeResp.warning);
-				$("#warning_").show();
-			}
-			if(decodeResp.desc_long) {
-				$("#desc_long").html(decodeResp.desc_long);
-				$("#desc_long_").show();
-			}
-			if(decodeResp.compatitle) {
-				$("#compatitle").html(decodeResp.compatitle);
-				$("#compatitle_").show();
-				var ios_ver = iOSVersion();
-				if(ios_ver) {
-					$("#your_ios").show();
-					$("#your_ios").html("Current iOS: "+ios_ver);
-				}
-			}
-			if(decodeResp.changelog) {
-				$("#changelog").html(decodeResp.changelog);
-				$("#changelog_").show();
-			}
-			if(decodeResp.screenshot) {
-				$("#screenshot").html(decodeResp.screenshot);
-				$("#screenshot_").show();
-			}
-			if(decodeResp.open == true) {
-				$("#is_open_source_").show();
-			}
-			
+
+function loadPackageInfo(agentSearchString) {
+    if (navigator.userAgent.search(new RegExp(agentSearchString, "i")) == -1) {
+        $("#showAddRepo_, #showAddRepoUrl_").show();
+    }
+    var urlSelfParts = window.location.href.split('description.html?id=');
+    var form_url = urlSelfParts[0] + "packageInfo/" + urlSelfParts[1];
+    $.ajax({
+        url: form_url,
+        type: "GET",
+        cache: false,
+        crossDomain: true,
+        success: function(returnhtml) {
+            $("#tweakStatusInfo").hide();
+            var decodeResp = JSON.parse(returnhtml);
+            if (decodeResp.name) {
+                document.title = decodeResp.name;
+                $("#name").text(decodeResp.name).show();
+            }
+            if (decodeResp.desc_short) {
+                $("#desc_short").text(decodeResp.desc_short).show();
+            }
+            if (decodeResp.warning) {
+                $("#warning").text(decodeResp.warning).show();
+            }
+            if (decodeResp.desc_long) {
+                $("#desc_long").text(decodeResp.desc_long).show();
+            }
+            if (decodeResp.compatitle) {
+                $("#compatitle").text(decodeResp.compatitle).show();
+                var ios_ver = iOSVersion();
+                if (ios_ver) {
+                    $("#your_ios").text("Current iOS: " + ios_ver).show();
+                }
+            }
+            if (decodeResp.changelog) {
+                $("#changelog").text(decodeResp.changelog).show();
+            }
+            if (decodeResp.screenshot) {
+                $("#screenshot").html(decodeResp.screenshot).show();
+            }
+            if (decodeResp.open === true) {
+                $("#is_open_source_").show();
+            }
         },
-		error: function (err) {
-			$("#errorInfo").html("Description unavailable for "+urlSelfParts[1]);
-		}
-	});
+        error: function(err) {
+            $("#errorInfo").text("Description unavailable for " + urlSelfParts[1]);
+        }
+    });
 }
-function loadPackageInfos() {
-	if (navigator.userAgent.search(/Sileo/) == -1) {
-		$("#showAddRepo_").show();
-		$("#showAddRepoUrl_").show();
-	}
-	var urlSelfParts = window.location.href.split('description.html?id=');
-	var form_url = urlSelfParts[0]+"packageInfo/"+urlSelfParts[1];
-	$.ajax({
-		url: form_url,
-		type: "GET",
-		cache: false,
-		crossDomain: true,
-		success: function (returnhtml) {
-			$("#tweakStatusInfo").hide();
-			var decodeResp = eval('('+returnhtml+')');
-			if(decodeResp.name) {
-				document.title = decodeResp.name;
-				$("#name").html(decodeResp.name);
-				$("#name").show();
-			}
-			if(decodeResp.desc_short) {
-				$("#desc_short").html(decodeResp.desc_short);
-				$("#desc_short_").show();
-			}
-			if(decodeResp.warning) {
-				$("#warning").html(decodeResp.warning);
-				$("#warning_").show();
-			}
-			if(decodeResp.desc_long) {
-				$("#desc_long").html(decodeResp.desc_long);
-				$("#desc_long_").show();
-			}
-			if(decodeResp.compatitle) {
-				$("#compatitle").html(decodeResp.compatitle);
-				$("#compatitle_").show();
-				var ios_ver = iOSVersion();
-				if(ios_ver) {
-					$("#your_ios").show();
-					$("#your_ios").html("Current iOS: "+ios_ver);
-				}
-			}
-			if(decodeResp.changelog) {
-				$("#changelog").html(decodeResp.changelog);
-				$("#changelog_").show();
-			}
-			if(decodeResp.screenshot) {
-				$("#screenshot").html(decodeResp.screenshot);
-				$("#screenshot_").show();
-			}
-			if(decodeResp.open == true) {
-				$("#is_open_source_").show();
-			}
-			
+
+function loadRecentUpdates(agentSearchString) {
+    var form_url = window.location.protocol + "//" + window.location.hostname + "/last.updates";
+    $.ajax({
+        url: form_url,
+        type: "GET",
+        cache: false,
+        crossDomain: true,
+        success: function(returnhtml) {
+            var decodeResp = JSON.parse(returnhtml);
+            var htmlnews = "";
+            decodeResp.forEach(function(dicNow) {
+                var urlOpen = "cydia://package/" + dicNow.package;
+                if (navigator.userAgent.search(new RegExp(agentSearchString, "i")) == -1) {
+                    urlOpen = window.location.protocol + "//" + window.location.hostname + "/description.html?id=" + dicNow.package;
+                }
+                htmlnews += "<li><a href='" + urlOpen + "' target='_blank'><img class='icon' src='tweak.png'/><label>" + dicNow.name + " v" + dicNow.version + "</label></a></li>";
+            });
+            $("#updates").html(htmlnews).show();
         },
-		error: function (err) {
-			$("#errorInfo").html("Description unavailable for "+urlSelfParts[1]);
-		}
-	});
-}
-function loadRecentUpdates() {
-	var form_url = window.location.protocol+"//"+window.location.hostname+"/last.updates";
-	$.ajax({
-		url: form_url,
-		type: "GET",
-		cache: false,
-		crossDomain: true,
-		success: function (returnhtml) {
-			var decodeResp = eval('('+returnhtml+')');
-			var htmlnews = "";
-			for (var dicNow in decodeResp) {
-				var urlOpen = "cydia://package/"+decodeResp[dicNow].package;
-				if (navigator.userAgent.search(/Cydia/) == -1) {
-					urlOpen = window.location.protocol+"//"+window.location.hostname+"/description.html?id="+decodeResp[dicNow].package;
-				}
-				htmlnews +=  "<li><a href='"+urlOpen+"' target='_blank'><img class='icon' src='tweak.png'/><label>"+decodeResp[dicNow].name+" v"+decodeResp[dicNow].version+"</label></a></li>";
-			}
-			$("#updates").html(htmlnews);
-			$("#updates_").show();			
-        },
-		error: function (err) {
-			$("#updates_").hide();	
-		}
-	});
-}
-function loadRecentUpdates() {
-	var form_url = window.location.protocol+"//"+window.location.hostname+"/last.updates";
-	$.ajax({
-		url: form_url,
-		type: "GET",
-		cache: false,
-		crossDomain: true,
-		success: function (returnhtml) {
-			var decodeResp = eval('('+returnhtml+')');
-			var htmlnews = "";
-			for (var dicNow in decodeResp) {
-				var urlOpen = "cydia://package/"+decodeResp[dicNow].package;
-				if (navigator.userAgent.search(/Sileo/) == -1) {
-					urlOpen = window.location.protocol+"//"+window.location.hostname+"/description.html?id="+decodeResp[dicNow].package;
-				}
-				htmlnews +=  "<li><a href='"+urlOpen+"' target='_blank'><img class='icon' src='tweak.png'/><label>"+decodeResp[dicNow].name+" v"+decodeResp[dicNow].version+"</label></a></li>";
-			}
-			$("#updates").html(htmlnews);
-			$("#updates_").show();			
-        },
-		error: function (err) {
-			$("#updates_").hide();	
-		}
-	});
+        error: function(err) {
+            $("#updates_").hide();
+        }
+    });
 }
