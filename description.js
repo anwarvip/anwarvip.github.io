@@ -1,77 +1,182 @@
-/*
-I saw some parts of this code on the internet. I forgot where. If it's yours
-let me know and I'll credit you.
-
-*/
-
-// changed const to var for IE9/10 compatibity.
-var VERSION_CHECK_SUPPORTED = "Your iOS version (%s) is compatible";
-var VERSION_CHECK_NEEDS_UPGRADE = "Requires at least iOS %s";
-var VERSION_CHECK_UNCONFIRMED = "Not yet tested on iOS %s";
-var VERSION_CHECK_UNSUPPORTED = "Only compatible with iOS %s to %s";
-
-function ios_version_check(minIOS,maxIOS,otherIOS,callBack) {
-	"use strict";
-
-
-	function parseVersionString(version) {
-		var bits = version.split(".");
-		return [ parseInt(bits[0]), parseInt(bits[1]) ? parseInt(bits[1]) : 0, parseInt(bits[2]) ? parseInt(bits[2]) : 0 ];
+function iOSVersion() {
+	var match = (navigator.appVersion).split('OS ');
+	if (match.length > 1) {
+		return match[1].split(' ')[0].split('_').join('.');
 	}
-
-	function compareVersions(one, two) {
-		// https://gist.github.com/TheDistantSea/8021359
-		for (var i = 0; i < one.length; ++i) {
-			if (two.length == i) {
-				return 1;
+	return false;
+}
+$(function() {
+  $("li").on("click",function() {
+	  if(this.id=="dnt") {
+		  $("#dnt_txt").html("You can donate USD via PayPal mail: anwar.vip"+"@"+"gmail.com");
+	  }
+  });
+});
+function loadPackageInfo() {
+	if (navigator.userAgent.search(/Cydia/) == -1) {
+		$("#showAddRepo_").show();
+		$("#showAddRepoUrl_").show();
+	}
+	var urlSelfParts = window.location.href.split('description.html?id=');
+	var form_url = urlSelfParts[0]+"packageInfo/"+urlSelfParts[1];
+	$.ajax({
+		url: form_url,
+		type: "GET",
+		cache: false,
+		crossDomain: true,
+		success: function (returnhtml) {
+			$("#tweakStatusInfo").hide();
+			var decodeResp = eval('('+returnhtml+')');
+			if(decodeResp.name) {
+				document.title = decodeResp.name;
+				$("#name").html(decodeResp.name);
+				$("#name").show();
 			}
-
-			if (one[i] == two[i]) {
-				continue;
-			} else if (one[i] > two[i]) {
-				return 1;
-			} else {
-				return -1;
+			if(decodeResp.desc_short) {
+				$("#desc_short").html(decodeResp.desc_short);
+				$("#desc_short_").show();
 			}
+			if(decodeResp.warning) {
+				$("#warning").html(decodeResp.warning);
+				$("#warning_").show();
+			}
+			if(decodeResp.desc_long) {
+				$("#desc_long").html(decodeResp.desc_long);
+				$("#desc_long_").show();
+			}
+			if(decodeResp.compatitle) {
+				$("#compatitle").html(decodeResp.compatitle);
+				$("#compatitle_").show();
+				var ios_ver = iOSVersion();
+				if(ios_ver) {
+					$("#your_ios").show();
+					$("#your_ios").html("Current iOS: "+ios_ver);
+				}
+			}
+			if(decodeResp.changelog) {
+				$("#changelog").html(decodeResp.changelog);
+				$("#changelog_").show();
+			}
+			if(decodeResp.screenshot) {
+				$("#screenshot").html(decodeResp.screenshot);
+				$("#screenshot_").show();
+			}
+			if(decodeResp.open == true) {
+				$("#is_open_source_").show();
+			}
+			
+        },
+		error: function (err) {
+			$("#errorInfo").html("Description unavailable for "+urlSelfParts[1]);
 		}
-
-		if (one.length != two.length) {
-			return -1;
+	});
+}
+function loadPackageInfos() {
+	if (navigator.userAgent.search(/Sileo/) == -1) {
+		$("#showAddRepo_").show();
+		$("#showAddRepoUrl_").show();
+	}
+	var urlSelfParts = window.location.href.split('description.html?id=');
+	var form_url = urlSelfParts[0]+"packageInfo/"+urlSelfParts[1];
+	$.ajax({
+		url: form_url,
+		type: "GET",
+		cache: false,
+		crossDomain: true,
+		success: function (returnhtml) {
+			$("#tweakStatusInfo").hide();
+			var decodeResp = eval('('+returnhtml+')');
+			if(decodeResp.name) {
+				document.title = decodeResp.name;
+				$("#name").html(decodeResp.name);
+				$("#name").show();
+			}
+			if(decodeResp.desc_short) {
+				$("#desc_short").html(decodeResp.desc_short);
+				$("#desc_short_").show();
+			}
+			if(decodeResp.warning) {
+				$("#warning").html(decodeResp.warning);
+				$("#warning_").show();
+			}
+			if(decodeResp.desc_long) {
+				$("#desc_long").html(decodeResp.desc_long);
+				$("#desc_long_").show();
+			}
+			if(decodeResp.compatitle) {
+				$("#compatitle").html(decodeResp.compatitle);
+				$("#compatitle_").show();
+				var ios_ver = iOSVersion();
+				if(ios_ver) {
+					$("#your_ios").show();
+					$("#your_ios").html("Current iOS: "+ios_ver);
+				}
+			}
+			if(decodeResp.changelog) {
+				$("#changelog").html(decodeResp.changelog);
+				$("#changelog_").show();
+			}
+			if(decodeResp.screenshot) {
+				$("#screenshot").html(decodeResp.screenshot);
+				$("#screenshot_").show();
+			}
+			if(decodeResp.open == true) {
+				$("#is_open_source_").show();
+			}
+			
+        },
+		error: function (err) {
+			$("#errorInfo").html("Description unavailable for "+urlSelfParts[1]);
 		}
-
-		return 0;
-	}
-
-	var version = navigator.appVersion.match(/CPU( iPhone)? OS (\d+)_(\d+)(_(\d+))? like/i);
-	if (!version) {
-		return 0;
-	}
-
-	var osVersion = [ parseInt(version[2]), parseInt(version[3]), version[4] ? parseInt(version[5]) : 0 ],
-
-		osString = osVersion[0] + "." + osVersion[1] + (osVersion[2] && osVersion[2] != 0 ? "." + osVersion[2] : ""),
-		minString = minIOS,
-		maxString = maxIOS,
-
-		minVersion = parseVersionString(minString),
-		maxVersion = maxString ? parseVersionString(maxString) : null,
-
-		message = VERSION_CHECK_SUPPORTED.replace("%s", osString),
-		isBad = false;
-
-	if (compareVersions(minVersion, osVersion) == 1) {
-		message = VERSION_CHECK_NEEDS_UPGRADE.replace("%s", minString);
-		isBad = true;
-	} else if (maxVersion && compareVersions(maxVersion, osVersion) == -1) {
-		if ("unsupported" == otherIOS) {
-			message = VERSION_CHECK_UNSUPPORTED.replace("%s", minString).replace("%s", maxString);
-		} else {
-			message = VERSION_CHECK_UNCONFIRMED.replace("%s", osString);
+	});
+}
+function loadRecentUpdates() {
+	var form_url = window.location.protocol+"//"+window.location.hostname+"/last.updates";
+	$.ajax({
+		url: form_url,
+		type: "GET",
+		cache: false,
+		crossDomain: true,
+		success: function (returnhtml) {
+			var decodeResp = eval('('+returnhtml+')');
+			var htmlnews = "";
+			for (var dicNow in decodeResp) {
+				var urlOpen = "cydia://package/"+decodeResp[dicNow].package;
+				if (navigator.userAgent.search(/Cydia/) == -1) {
+					urlOpen = window.location.protocol+"//"+window.location.hostname+"/description.html?id="+decodeResp[dicNow].package;
+				}
+				htmlnews +=  "<li><a href='"+urlOpen+"' target='_blank'><img class='icon' src='tweak.png'/><label>"+decodeResp[dicNow].name+" v"+decodeResp[dicNow].version+"</label></a></li>";
+			}
+			$("#updates").html(htmlnews);
+			$("#updates_").show();			
+        },
+		error: function (err) {
+			$("#updates_").hide();	
 		}
-
-		isBad = true;
-	}
-	callBack(message,isBad);
-
-	return (isBad?-1:1);
+	});
+}
+function loadRecentUpdates() {
+	var form_url = window.location.protocol+"//"+window.location.hostname+"/last.updates";
+	$.ajax({
+		url: form_url,
+		type: "GET",
+		cache: false,
+		crossDomain: true,
+		success: function (returnhtml) {
+			var decodeResp = eval('('+returnhtml+')');
+			var htmlnews = "";
+			for (var dicNow in decodeResp) {
+				var urlOpen = "cydia://package/"+decodeResp[dicNow].package;
+				if (navigator.userAgent.search(/Sileo/) == -1) {
+					urlOpen = window.location.protocol+"//"+window.location.hostname+"/description.html?id="+decodeResp[dicNow].package;
+				}
+				htmlnews +=  "<li><a href='"+urlOpen+"' target='_blank'><img class='icon' src='tweak.png'/><label>"+decodeResp[dicNow].name+" v"+decodeResp[dicNow].version+"</label></a></li>";
+			}
+			$("#updates").html(htmlnews);
+			$("#updates_").show();			
+        },
+		error: function (err) {
+			$("#updates_").hide();	
+		}
+	});
 }
