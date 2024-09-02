@@ -1,67 +1,77 @@
-const VERSION_CHECK_SUPPORTED = "Your iOS version (%s) is compatible";
-const VERSION_CHECK_NEEDS_UPGRADE = "Requires at least iOS %s";
-const VERSION_CHECK_UNCONFIRMED = "Not yet tested on iOS %s";
-const VERSION_CHECK_UNSUPPORTED = "Only compatible with iOS %s to %s";
+/*
+I saw some parts of this code on the internet. I forgot where. If it's yours
+let me know and I'll credit you.
 
-function iosVersionCheck(minIOS, maxIOS, otherIOS, callBack) {
-    "use strict";
+*/
 
-    function parseVersionString(version) {
-        const parts = version.split(".");
-        return [
-            parseInt(parts[0]),
-            parseInt(parts[1]) || 0,
-            parseInt(parts[2]) || 0
-        ];
-    }
+// changed const to var for IE9/10 compatibity.
+var VERSION_CHECK_SUPPORTED = "Your iOS version (%s) is compatible";
+var VERSION_CHECK_NEEDS_UPGRADE = "Requires at least iOS %s";
+var VERSION_CHECK_UNCONFIRMED = "Not yet tested on iOS %s";
+var VERSION_CHECK_UNSUPPORTED = "Only compatible with iOS %s to %s";
 
-    function compareVersions(version1, version2) {
-        for (let i = 0; i < version1.length; ++i) {
-            if (version2.length === i) {
-                return 1;
-            }
-            if (version1[i] === version2[i]) {
-                continue;
-            } else if (version1[i] > version2[i]) {
-                return 1;
-            } else {
-                return -1;
-            }
-        }
-        return version1.length !== version2.length ? -1 : 0;
-    }
+function ios_version_check(minIOS,maxIOS,otherIOS,callBack) {
+	"use strict";
 
-    const versionMatch = navigator.appVersion.match(/CPU( iPhone)? OS (\d+)_(\d+)(_(\d+))? like/i);
-    if (!versionMatch) {
-        return 0;
-    }
 
-    const osVersion = [
-        parseInt(versionMatch[2]),
-        parseInt(versionMatch[3]),
-        versionMatch[4] ? parseInt(versionMatch[5]) : 0
-    ];
+	function parseVersionString(version) {
+		var bits = version.split(".");
+		return [ parseInt(bits[0]), parseInt(bits[1]) ? parseInt(bits[1]) : 0, parseInt(bits[2]) ? parseInt(bits[2]) : 0 ];
+	}
 
-    const osString = `${osVersion[0]}.${osVersion[1]}${osVersion[2] !== 0 ? `.${osVersion[2]}` : ''}`;
-    const minVersion = parseVersionString(minIOS);
-    const maxVersion = maxIOS ? parseVersionString(maxIOS) : null;
+	function compareVersions(one, two) {
+		// https://gist.github.com/TheDistantSea/8021359
+		for (var i = 0; i < one.length; ++i) {
+			if (two.length == i) {
+				return 1;
+			}
 
-    let message = VERSION_CHECK_SUPPORTED.replace("%s", osString);
-    let isBad = false;
+			if (one[i] == two[i]) {
+				continue;
+			} else if (one[i] > two[i]) {
+				return 1;
+			} else {
+				return -1;
+			}
+		}
 
-    if (compareVersions(minVersion, osVersion) === 1) {
-        message = VERSION_CHECK_NEEDS_UPGRADE.replace("%s", minIOS);
-        isBad = true;
-    } else if (maxVersion && compareVersions(maxVersion, osVersion) === -1) {
-        if (otherIOS === "unsupported") {
-            message = VERSION_CHECK_UNSUPPORTED.replace("%s", minIOS).replace("%s", maxIOS);
-        } else {
-            message = VERSION_CHECK_UNCONFIRMED.replace("%s", osString);
-        }
-        isBad = true;
-    }
+		if (one.length != two.length) {
+			return -1;
+		}
 
-    callBack(message, isBad);
+		return 0;
+	}
 
-    return isBad ? -1 : 1;
+	var version = navigator.appVersion.match(/CPU( iPhone)? OS (\d+)_(\d+)(_(\d+))? like/i);
+	if (!version) {
+		return 0;
+	}
+
+	var osVersion = [ parseInt(version[2]), parseInt(version[3]), version[4] ? parseInt(version[5]) : 0 ],
+
+		osString = osVersion[0] + "." + osVersion[1] + (osVersion[2] && osVersion[2] != 0 ? "." + osVersion[2] : ""),
+		minString = minIOS,
+		maxString = maxIOS,
+
+		minVersion = parseVersionString(minString),
+		maxVersion = maxString ? parseVersionString(maxString) : null,
+
+		message = VERSION_CHECK_SUPPORTED.replace("%s", osString),
+		isBad = false;
+
+	if (compareVersions(minVersion, osVersion) == 1) {
+		message = VERSION_CHECK_NEEDS_UPGRADE.replace("%s", minString);
+		isBad = true;
+	} else if (maxVersion && compareVersions(maxVersion, osVersion) == -1) {
+		if ("unsupported" == otherIOS) {
+			message = VERSION_CHECK_UNSUPPORTED.replace("%s", minString).replace("%s", maxString);
+		} else {
+			message = VERSION_CHECK_UNCONFIRMED.replace("%s", osString);
+		}
+
+		isBad = true;
+	}
+	callBack(message,isBad);
+
+	return (isBad?-1:1);
 }
